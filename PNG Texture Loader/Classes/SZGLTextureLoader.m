@@ -21,7 +21,6 @@
 #define __forceinline
 
 int stbi_png_partial;   // a quick hack to only allow decoding some of a PNG... I should implement real streaming support instead
-BOOL sHasMetIPhoneCompressionError = NO;
 
 
 
@@ -1334,15 +1333,29 @@ static GLuint SZGLLoadTexturePNG(NSString *imagePath, CGSize *imageSize, CGSize 
                     sourceFormat = (image_component_count == 3)? GL_RGB: GL_RGBA;
                 }
                 
+                // Support for Premultiplied Alpha
+                if (isAppleCgBI) {
+                    for (int y = 0; y < rheight; y++) {
+                        int y_padd = y * rwidth * 4;
+                        for (int x = 0; x < rwidth; x++) {
+                            int pixel_pos = y_padd + x * 4;
+                            float alpha = (float)image_buffer[pixel_pos + 3] / 0xff;
+                            image_buffer[pixel_pos + 0] = (unsigned char)((float)image_buffer[pixel_pos + 0] / alpha);
+                            image_buffer[pixel_pos + 1] = (unsigned char)((float)image_buffer[pixel_pos + 1] / alpha);
+                            image_buffer[pixel_pos + 2] = (unsigned char)((float)image_buffer[pixel_pos + 2] / alpha);
+                        }
+                    }
+                }
+                
                 glTexImage2D(GL_TEXTURE_2D, 
                              0,						// MIPMAPのテクスチャ解像度(使用しないときは0)
                              ((image_component_count == 3)? GL_RGB: GL_RGBA),				// OpenGL内部でのピクセルデータのフォーマット
-                             rwidth,                // 幅
-                             rheight,               // 高さ
-                             0,						// テクスチャの境界線の太さ
-                             sourceFormat, 	// メモリ上(格納前)のピクセルデータのフォーマット
-                             GL_UNSIGNED_BYTE, 		// メモリ上(格納前)のピクセルデータのデータ型
-                             image_buffer           // メモリ上(格納前)のピクセルデータへのポインタ
+                             rwidth,                // Image width (resized version)
+                             rheight,               // Image height (resized version)
+                             0,						// Border width of texture
+                             sourceFormat,          // Pixel data format "on memory" (before loaded)
+                             GL_UNSIGNED_BYTE, 		// Pixel data type "on memory" (before loaded)
+                             image_buffer           // Pointer to the pixel data on memory (before loaded)
                              );
                 
                 /*
@@ -1737,14 +1750,12 @@ static GLuint SZGLLoadTextureImpl_Apple(NSString *imagePath, CGSize *imageSize, 
 
 GLuint SZGLLoadTexture(NSString *imagePath, CGSize *imageSize, CGSize *textureSize)
 {
-    if (!sHasMetIPhoneCompressionError && [[imagePath pathExtension] compare:@"png" options:NSCaseInsensitiveSearch] == NSOrderedSame) {
+    if ([[imagePath pathExtension] compare:@"png" options:NSCaseInsensitiveSearch] == NSOrderedSame) {
         GLuint innerRet = SZGLLoadTexturePNG(imagePath, imageSize, textureSize);
         if (innerRet != GL_INVALID_VALUE) {
             return innerRet;
         }
-        if (sHasMetIPhoneCompressionError) {
-            NSLog(@"Please confirm that the iPhone PNG compression is disabled (IPHONE_OPTIMIZE_OPTIONS=-skip-PNGs)");
-        }
+        NSLog(@"Failed to SZGLLoadTexturePNG()...");
     }
     
     return SZGLLoadTextureImpl_Apple(imagePath, imageSize, textureSize);
