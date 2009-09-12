@@ -8,17 +8,16 @@
 
 #import "ES1Renderer.h"
 
+
 @implementation ES1Renderer
 
 // Create an ES 1.1 context
 - (id) init
 {
-	if (self = [super init])
-	{
+	if (self = [super init]) {
 		context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];
         
-        if (!context || ![EAGLContext setCurrentContext:context])
-		{
+        if (!context || ![EAGLContext setCurrentContext:context]) {
             [self release];
             return nil;
         }
@@ -29,59 +28,94 @@
 		glBindFramebufferOES(GL_FRAMEBUFFER_OES, defaultFramebuffer);
 		glBindRenderbufferOES(GL_RENDERBUFFER_OES, colorRenderbuffer);
 		glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_COLOR_ATTACHMENT0_OES, GL_RENDERBUFFER_OES, colorRenderbuffer);
+
+        // Set up blending mode
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+        
+        mAngle = 0.0f;
+        
+        // You can use chara_opt.png or white_ball_opt.png instead of the 2 images used below to test against the iPhone optimization,
+        // which are already optimized using command "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/pngcrush -iphone <in-file> <out-file>".
+
+        mCharaTex = [[SZGLTexture alloc] initWithName:@"chara.png"];
+        mBallTex = [[SZGLTexture alloc] initWithName:@"white_ball.png"];        
+        
+        //mTestTex = [[SZGLTexture alloc] initWithName:@"test_sq_opt.png"];
 	}
 	
 	return self;
 }
 
-- (void) render
+- (void)dealloc
 {
-    // Replace the implementation of this method to do your own custom drawing
+    [mCharaTex release];
+    [mBallTex release];
     
-    static const GLfloat squareVertices[] = {
-        -0.5f,  -0.33f,
-         0.5f,  -0.33f,
-        -0.5f,   0.33f,
-         0.5f,   0.33f,
-    };
-	
-    static const GLubyte squareColors[] = {
-        255, 255,   0, 255,
-        0,   255, 255, 255,
-        0,     0,   0,   0,
-        255,   0, 255, 255,
-    };
+    //[mTestTex release];
+
+	// Tear down GL
+	if (defaultFramebuffer) {
+		glDeleteFramebuffersOES(1, &defaultFramebuffer);
+		defaultFramebuffer = 0;
+	}
     
-	static float transY = 0.0f;
+	if (colorRenderbuffer) {
+		glDeleteRenderbuffersOES(1, &colorRenderbuffer);
+		colorRenderbuffer = 0;
+	}
 	
-	// This application only creates a single context which is already set current at this point.
-	// This call is redundant, but needed if dealing with multiple contexts.
+	// Tear down context
+	if ([EAGLContext currentContext] == context) {
+        [EAGLContext setCurrentContext:nil];
+    }
+	
+	[context release];
+	context = nil;
+	
+	[super dealloc];
+}
+
+- (void)drawMain
+{
+    // Update Model
+    mAngle += 0.05f;
+    
+    // Draw View
+    glClearColor(0.39f, 0.58f, 0.93f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT);
+    
+    for (int i = 0; i < 5; i++) {
+        [mCharaTex drawAtPoint:CGPointMake(i*50, 0) alpha:(i+1)/5.0f];
+    }
+    
+    [mBallTex drawAtPoint:CGPointMake((320.0f-[mBallTex imageSize].width)/2, 300.0f) alpha:1.0f];
+    
+    [mCharaTex drawAtPoint:CGPointMake(320.0f/2, 460.0f/2)
+                sourceRect:CGRectZero
+                  rotation:mAngle
+                    origin:[mCharaTex centerPoint]
+                     scale:CGSizeMake(1.4f, 1.4f)
+                     alpha:1.0f];
+    
+    //[mTestTex drawAtPoint:CGPointMake(0, 0)];
+    //[mTestTex drawAtPoint:CGPointMake(0, 0) sourceRect:CGRectZero rotation:0.0f origin:CGPointZero scale:CGSizeMake(20.0f, 20.0f) alpha:1.0f];
+}
+
+- (void)render
+{
     [EAGLContext setCurrentContext:context];
     
-	// This application only creates a single default framebuffer which is already bound at this point.
-	// This call is redundant, but needed if dealing with multiple framebuffers.
     glBindFramebufferOES(GL_FRAMEBUFFER_OES, defaultFramebuffer);
     glViewport(0, 0, backingWidth, backingHeight);
     
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
+    glOrthof(0.0f, 320.0f, 0.0f, 480.0f, -1.0f, 1.0f);
     glMatrixMode(GL_MODELVIEW);
-	glLoadIdentity();
-    glTranslatef(0.0f, (GLfloat)(sinf(transY)/2.0f), 0.0f);
-	transY += 0.075f;
+
+    [self drawMain];
 	
-    glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT);
-    
-    glVertexPointer(2, GL_FLOAT, 0, squareVertices);
-    glEnableClientState(GL_VERTEX_ARRAY);
-    glColorPointer(4, GL_UNSIGNED_BYTE, 0, squareColors);
-    glEnableClientState(GL_COLOR_ARRAY);
-    
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-    
-	// This application only creates a single color renderbuffer which is already bound at this point.
-	// This call is redundant, but needed if dealing with multiple renderbuffers.
     glBindRenderbufferOES(GL_RENDERBUFFER_OES, colorRenderbuffer);
     [context presentRenderbuffer:GL_RENDERBUFFER_OES];
 }
@@ -103,29 +137,6 @@
     return YES;
 }
 
-- (void) dealloc
-{
-	// Tear down GL
-	if (defaultFramebuffer)
-	{
-		glDeleteFramebuffersOES(1, &defaultFramebuffer);
-		defaultFramebuffer = 0;
-	}
-
-	if (colorRenderbuffer)
-	{
-		glDeleteRenderbuffersOES(1, &colorRenderbuffer);
-		colorRenderbuffer = 0;
-	}
-	
-	// Tear down context
-	if ([EAGLContext currentContext] == context)
-        [EAGLContext setCurrentContext:nil];
-	
-	[context release];
-	context = nil;
-	
-	[super dealloc];
-}
-
 @end
+
+

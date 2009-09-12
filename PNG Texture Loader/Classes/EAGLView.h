@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-#import "ESRenderer.h"
+#import "ES1Renderer.h"
 
 // This class wraps the CAEAGLLayer from CoreAnimation into a convenient UIView subclass.
 // The view content is basically an EAGL surface you render your OpenGL scene into.
@@ -17,7 +17,7 @@
 @interface EAGLView : UIView
 {    
 @private
-	id <ESRenderer> renderer;
+	ES1Renderer     *mRenderer;
 	
 	BOOL animating;
 	BOOL displayLinkSupported;

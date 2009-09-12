@@ -12,13 +12,19 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		2514C27210084DB100A42282 /* ES1Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2514C26E10084DB100A42282 /* ES1Renderer.m */; };
-		2514C27310084DB100A42282 /* ES2Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2514C27010084DB100A42282 /* ES2Renderer.m */; };
-		2514C27B10084DCA00A42282 /* Shader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 2514C27910084DCA00A42282 /* Shader.fsh */; };
-		2514C27C10084DCA00A42282 /* Shader.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 2514C27A10084DCA00A42282 /* Shader.vsh */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28FD14FE0DC6FC130079059D /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD14FD0DC6FC130079059D /* EAGLView.m */; };
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
+		8E73E0F1105B53E70022A61A /* SZGLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E73E0EE105B53E70022A61A /* SZGLTexture.m */; };
+		8E73E0F2105B53E70022A61A /* SZGLTextureLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E73E0F0105B53E70022A61A /* SZGLTextureLoader.m */; };
+		8E73E0F7105B545E0022A61A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E73E0F6105B545E0022A61A /* CoreGraphics.framework */; };
+		8E73E10A105B547E0022A61A /* chara.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E73E108105B547E0022A61A /* chara.png */; };
+		8E73E10B105B547E0022A61A /* white_ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E73E109105B547E0022A61A /* white_ball.png */; };
+		8E73E146105B56A50022A61A /* test_sq.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E73E145105B56A50022A61A /* test_sq.png */; };
+		8E73E1A4105B5D7B0022A61A /* test_sq_opt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E73E1A3105B5D7B0022A61A /* test_sq_opt.png */; };
+		8E73E283105B659F0022A61A /* white_ball_opt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E73E281105B659F0022A61A /* white_ball_opt.png */; };
+		8E73E284105B659F0022A61A /* chara_opt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E73E282105B659F0022A61A /* chara_opt.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,11 +35,6 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2514C26D10084DB100A42282 /* ES1Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ES1Renderer.h; sourceTree = "<group>"; };
 		2514C26E10084DB100A42282 /* ES1Renderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ES1Renderer.m; sourceTree = "<group>"; };
-		2514C26F10084DB100A42282 /* ES2Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ES2Renderer.h; sourceTree = "<group>"; };
-		2514C27010084DB100A42282 /* ES2Renderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ES2Renderer.m; sourceTree = "<group>"; };
-		2514C27110084DB100A42282 /* ESRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRenderer.h; sourceTree = "<group>"; };
-		2514C27910084DCA00A42282 /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Shader.fsh; path = Shaders/Shader.fsh; sourceTree = "<group>"; };
-		2514C27A10084DCA00A42282 /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Shader.vsh; path = Shaders/Shader.vsh; sourceTree = "<group>"; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		28FD14FC0DC6FC130079059D /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
 		28FD14FD0DC6FC130079059D /* EAGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAGLView.m; sourceTree = "<group>"; };
@@ -42,6 +43,17 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* PNG_Texture_Loader_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PNG_Texture_Loader_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* PNG_Texture_Loader-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PNG_Texture_Loader-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		8E73E0ED105B53E70022A61A /* SZGLTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZGLTexture.h; sourceTree = "<group>"; };
+		8E73E0EE105B53E70022A61A /* SZGLTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZGLTexture.m; sourceTree = "<group>"; };
+		8E73E0EF105B53E70022A61A /* SZGLTextureLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZGLTextureLoader.h; sourceTree = "<group>"; };
+		8E73E0F0105B53E70022A61A /* SZGLTextureLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZGLTextureLoader.m; sourceTree = "<group>"; };
+		8E73E0F6105B545E0022A61A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8E73E108105B547E0022A61A /* chara.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara.png; sourceTree = "<group>"; };
+		8E73E109105B547E0022A61A /* white_ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_ball.png; sourceTree = "<group>"; };
+		8E73E145105B56A50022A61A /* test_sq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_sq.png; sourceTree = "<group>"; };
+		8E73E1A3105B5D7B0022A61A /* test_sq_opt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_sq_opt.png; sourceTree = "<group>"; };
+		8E73E281105B659F0022A61A /* white_ball_opt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_ball_opt.png; sourceTree = "<group>"; };
+		8E73E282105B659F0022A61A /* chara_opt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_opt.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +65,7 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */,
 				28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */,
+				8E73E0F7105B545E0022A61A /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,13 +77,14 @@
 			children = (
 				2514C26D10084DB100A42282 /* ES1Renderer.h */,
 				2514C26E10084DB100A42282 /* ES1Renderer.m */,
-				2514C26F10084DB100A42282 /* ES2Renderer.h */,
-				2514C27010084DB100A42282 /* ES2Renderer.m */,
-				2514C27110084DB100A42282 /* ESRenderer.h */,
 				28FD14FC0DC6FC130079059D /* EAGLView.h */,
 				28FD14FD0DC6FC130079059D /* EAGLView.m */,
 				1D3623240D0F684500981E51 /* PNG_Texture_LoaderAppDelegate.h */,
 				1D3623250D0F684500981E51 /* PNG_Texture_LoaderAppDelegate.m */,
+				8E73E0ED105B53E70022A61A /* SZGLTexture.h */,
+				8E73E0EE105B53E70022A61A /* SZGLTexture.m */,
+				8E73E0EF105B53E70022A61A /* SZGLTextureLoader.h */,
+				8E73E0F0105B53E70022A61A /* SZGLTextureLoader.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -83,20 +97,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2514C27610084DB600A42282 /* Shaders */ = {
-			isa = PBXGroup;
-			children = (
-				2514C27910084DCA00A42282 /* Shader.fsh */,
-				2514C27A10084DCA00A42282 /* Shader.vsh */,
-			);
-			name = Shaders;
-			sourceTree = "<group>";
-		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
 				080E96DDFE201D6D7F000001 /* Classes */,
-				2514C27610084DB600A42282 /* Shaders */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -117,6 +121,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8E73E145105B56A50022A61A /* test_sq.png */,
+				8E73E1A3105B5D7B0022A61A /* test_sq_opt.png */,
+				8E73E108105B547E0022A61A /* chara.png */,
+				8E73E282105B659F0022A61A /* chara_opt.png */,
+				8E73E109105B547E0022A61A /* white_ball.png */,
+				8E73E281105B659F0022A61A /* white_ball_opt.png */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* PNG_Texture_Loader-Info.plist */,
 			);
@@ -126,6 +136,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8E73E0F6105B545E0022A61A /* CoreGraphics.framework */,
 				28FD15070DC6FC5B0079059D /* QuartzCore.framework */,
 				28FD14FF0DC6FC520079059D /* OpenGLES.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
@@ -176,9 +187,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2514C27B10084DCA00A42282 /* Shader.fsh in Resources */,
-				2514C27C10084DCA00A42282 /* Shader.vsh in Resources */,
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				8E73E10A105B547E0022A61A /* chara.png in Resources */,
+				8E73E10B105B547E0022A61A /* white_ball.png in Resources */,
+				8E73E146105B56A50022A61A /* test_sq.png in Resources */,
+				8E73E1A4105B5D7B0022A61A /* test_sq_opt.png in Resources */,
+				8E73E283105B659F0022A61A /* white_ball_opt.png in Resources */,
+				8E73E284105B659F0022A61A /* chara_opt.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,7 +208,8 @@
 				1D3623260D0F684500981E51 /* PNG_Texture_LoaderAppDelegate.m in Sources */,
 				28FD14FE0DC6FC130079059D /* EAGLView.m in Sources */,
 				2514C27210084DB100A42282 /* ES1Renderer.m in Sources */,
-				2514C27310084DB100A42282 /* ES2Renderer.m in Sources */,
+				8E73E0F1105B53E70022A61A /* SZGLTexture.m in Sources */,
+				8E73E0F2105B53E70022A61A /* SZGLTextureLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,13 +248,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Satoshi Numata";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Satoshi Numata";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.1;
+				PROVISIONING_PROFILE = "D470AA3F-514B-4713-ABC9-08107EA38E0A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D470AA3F-514B-4713-ABC9-08107EA38E0A";
+				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
 		};
@@ -246,12 +265,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Satoshi Numata";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Satoshi Numata";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.1;
+				PROVISIONING_PROFILE = "D470AA3F-514B-4713-ABC9-08107EA38E0A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D470AA3F-514B-4713-ABC9-08107EA38E0A";
+				SDKROOT = iphoneos3.0;
 			};
 			name = Release;
 		};

@@ -6,12 +6,18 @@
 //  Copyright Satoshi Numata 2009. All rights reserved.
 //
 
-#import "ESRenderer.h"
-
 #import <OpenGLES/ES1/gl.h>
 #import <OpenGLES/ES1/glext.h>
 
-@interface ES1Renderer : NSObject <ESRenderer>
+#import <QuartzCore/QuartzCore.h>
+
+#import <OpenGLES/EAGL.h>
+#import <OpenGLES/EAGLDrawable.h>
+
+#import "SZGLTexture.h"
+
+
+@interface ES1Renderer : NSObject
 {
 @private
 	EAGLContext *context;
@@ -22,9 +28,16 @@
 	
 	// The OpenGL names for the framebuffer and renderbuffer used to render to this view
 	GLuint defaultFramebuffer, colorRenderbuffer;
+
+    float         mAngle;    
+    SZGLTexture   *mCharaTex;
+    SZGLTexture   *mBallTex;
+
+    //SZGLTexture     *mTestTex;
 }
 
-- (void) render;
-- (BOOL) resizeFromLayer:(CAEAGLLayer *)layer;
+- (void)render;
+- (BOOL)resizeFromLayer:(CAEAGLLayer *)layer;
 
 @end
+
