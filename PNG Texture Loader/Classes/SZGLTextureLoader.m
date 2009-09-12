@@ -1340,9 +1340,11 @@ static GLuint SZGLLoadTexturePNG(NSString *imagePath, CGSize *imageSize, CGSize 
                         for (int x = 0; x < rwidth; x++) {
                             int pixel_pos = y_padd + x * 4;
                             float alpha = (float)image_buffer[pixel_pos + 3] / 0xff;
-                            image_buffer[pixel_pos + 0] = (unsigned char)((float)image_buffer[pixel_pos + 0] / alpha);
-                            image_buffer[pixel_pos + 1] = (unsigned char)((float)image_buffer[pixel_pos + 1] / alpha);
-                            image_buffer[pixel_pos + 2] = (unsigned char)((float)image_buffer[pixel_pos + 2] / alpha);
+                            if (alpha > 0.0f) {
+                                image_buffer[pixel_pos + 0] = (unsigned char)((float)image_buffer[pixel_pos + 0] / alpha);
+                                image_buffer[pixel_pos + 1] = (unsigned char)((float)image_buffer[pixel_pos + 1] / alpha);
+                                image_buffer[pixel_pos + 2] = (unsigned char)((float)image_buffer[pixel_pos + 2] / alpha);
+                            }
                         }
                     }
                 }
