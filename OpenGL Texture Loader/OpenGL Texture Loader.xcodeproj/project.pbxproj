@@ -1,0 +1,319 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* OpenGL_Texture_LoaderAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* OpenGL_Texture_LoaderAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		2514C27210084DB100A42282 /* ESRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2514C26E10084DB100A42282 /* ESRenderer.m */; };
+		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		28FD14FE0DC6FC130079059D /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 28FD14FD0DC6FC130079059D /* EAGLView.m */; };
+		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
+		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
+		8E73E766105BAE1D0022A61A /* SZGLTexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E73E763105BAE1D0022A61A /* SZGLTexture.m */; };
+		8E73E767105BAE1D0022A61A /* SZGLTextureLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E73E765105BAE1D0022A61A /* SZGLTextureLoader.m */; };
+		8E73E76A105BAE310022A61A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E73E769105BAE310022A61A /* CoreGraphics.framework */; };
+		8E73E7B7105BAF060022A61A /* chara_lin2.pvr in Resources */ = {isa = PBXBuildFile; fileRef = 8E73E7B2105BAF060022A61A /* chara_lin2.pvr */; };
+		8E73E7B8105BAF060022A61A /* chara_lin4.pvr in Resources */ = {isa = PBXBuildFile; fileRef = 8E73E7B3105BAF060022A61A /* chara_lin4.pvr */; };
+		8E73E7B9105BAF060022A61A /* chara_prc4.pvr in Resources */ = {isa = PBXBuildFile; fileRef = 8E73E7B4105BAF060022A61A /* chara_prc4.pvr */; };
+		8E73E7BA105BAF060022A61A /* chara_prc2.pvr in Resources */ = {isa = PBXBuildFile; fileRef = 8E73E7B5105BAF060022A61A /* chara_prc2.pvr */; };
+		8E73E7BB105BAF060022A61A /* chara.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E73E7B6105BAF060022A61A /* chara.png */; };
+		8E73E7CE105BAF650022A61A /* chara_opt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E73E7CB105BAF650022A61A /* chara_opt.png */; };
+		8E73E7CF105BAF650022A61A /* white_ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E73E7CC105BAF650022A61A /* white_ball.png */; };
+		8E73E7D0105BAF650022A61A /* white_ball_opt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E73E7CD105BAF650022A61A /* white_ball_opt.png */; };
+		8E73E80E105BB07A0022A61A /* white_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E73E80C105BB07A0022A61A /* white_box.png */; };
+		8E73E80F105BB07A0022A61A /* white_box_opt.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E73E80D105BB07A0022A61A /* white_box_opt.png */; };
+		8E73E816105BB0EE0022A61A /* color_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E73E815105BB0EE0022A61A /* color_box.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* OpenGL_Texture_LoaderAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGL_Texture_LoaderAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* OpenGL_Texture_LoaderAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenGL_Texture_LoaderAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* OpenGL Texture Loader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenGL Texture Loader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2514C26E10084DB100A42282 /* ESRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESRenderer.m; sourceTree = "<group>"; };
+		2514C27110084DB100A42282 /* ESRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRenderer.h; sourceTree = "<group>"; };
+		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		28FD14FC0DC6FC130079059D /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
+		28FD14FD0DC6FC130079059D /* EAGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAGLView.m; sourceTree = "<group>"; };
+		28FD14FF0DC6FC520079059D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* OpenGL_Texture_Loader_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenGL_Texture_Loader_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* OpenGL_Texture_Loader-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OpenGL_Texture_Loader-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		8E73E762105BAE1D0022A61A /* SZGLTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZGLTexture.h; sourceTree = "<group>"; };
+		8E73E763105BAE1D0022A61A /* SZGLTexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZGLTexture.m; sourceTree = "<group>"; };
+		8E73E764105BAE1D0022A61A /* SZGLTextureLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZGLTextureLoader.h; sourceTree = "<group>"; };
+		8E73E765105BAE1D0022A61A /* SZGLTextureLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZGLTextureLoader.m; sourceTree = "<group>"; };
+		8E73E769105BAE310022A61A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		8E73E7B2105BAF060022A61A /* chara_lin2.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = chara_lin2.pvr; sourceTree = "<group>"; };
+		8E73E7B3105BAF060022A61A /* chara_lin4.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = chara_lin4.pvr; sourceTree = "<group>"; };
+		8E73E7B4105BAF060022A61A /* chara_prc4.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = chara_prc4.pvr; sourceTree = "<group>"; };
+		8E73E7B5105BAF060022A61A /* chara_prc2.pvr */ = {isa = PBXFileReference; lastKnownFileType = file; path = chara_prc2.pvr; sourceTree = "<group>"; };
+		8E73E7B6105BAF060022A61A /* chara.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara.png; sourceTree = "<group>"; };
+		8E73E7CB105BAF650022A61A /* chara_opt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chara_opt.png; sourceTree = "<group>"; };
+		8E73E7CC105BAF650022A61A /* white_ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_ball.png; sourceTree = "<group>"; };
+		8E73E7CD105BAF650022A61A /* white_ball_opt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_ball_opt.png; sourceTree = "<group>"; };
+		8E73E80C105BB07A0022A61A /* white_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_box.png; sourceTree = "<group>"; };
+		8E73E80D105BB07A0022A61A /* white_box_opt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_box_opt.png; sourceTree = "<group>"; };
+		8E73E815105BB0EE0022A61A /* color_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = color_box.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */,
+				28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */,
+				8E73E76A105BAE310022A61A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				2514C27110084DB100A42282 /* ESRenderer.h */,
+				2514C26E10084DB100A42282 /* ESRenderer.m */,
+				28FD14FC0DC6FC130079059D /* EAGLView.h */,
+				28FD14FD0DC6FC130079059D /* EAGLView.m */,
+				1D3623240D0F684500981E51 /* OpenGL_Texture_LoaderAppDelegate.h */,
+				1D3623250D0F684500981E51 /* OpenGL_Texture_LoaderAppDelegate.m */,
+				8E73E762105BAE1D0022A61A /* SZGLTexture.h */,
+				8E73E763105BAE1D0022A61A /* SZGLTexture.m */,
+				8E73E764105BAE1D0022A61A /* SZGLTextureLoader.h */,
+				8E73E765105BAE1D0022A61A /* SZGLTextureLoader.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* OpenGL Texture Loader.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* OpenGL_Texture_Loader_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* OpenGL_Texture_Loader-Info.plist */,
+				8E73E7B6105BAF060022A61A /* chara.png */,
+				8E73E7CB105BAF650022A61A /* chara_opt.png */,
+				8E73E7B2105BAF060022A61A /* chara_lin2.pvr */,
+				8E73E7B3105BAF060022A61A /* chara_lin4.pvr */,
+				8E73E7B4105BAF060022A61A /* chara_prc4.pvr */,
+				8E73E7B5105BAF060022A61A /* chara_prc2.pvr */,
+				8E73E7CC105BAF650022A61A /* white_ball.png */,
+				8E73E7CD105BAF650022A61A /* white_ball_opt.png */,
+				8E73E815105BB0EE0022A61A /* color_box.png */,
+				8E73E80C105BB07A0022A61A /* white_box.png */,
+				8E73E80D105BB07A0022A61A /* white_box_opt.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E73E769105BAE310022A61A /* CoreGraphics.framework */,
+				28FD15070DC6FC5B0079059D /* QuartzCore.framework */,
+				28FD14FF0DC6FC520079059D /* OpenGLES.framework */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* OpenGL Texture Loader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "OpenGL Texture Loader" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OpenGL Texture Loader";
+			productName = "OpenGL Texture Loader";
+			productReference = 1D6058910D05DD3D006BFB54 /* OpenGL Texture Loader.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "OpenGL Texture Loader" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* OpenGL Texture Loader */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
+				8E73E7B7105BAF060022A61A /* chara_lin2.pvr in Resources */,
+				8E73E7B8105BAF060022A61A /* chara_lin4.pvr in Resources */,
+				8E73E7B9105BAF060022A61A /* chara_prc4.pvr in Resources */,
+				8E73E7BA105BAF060022A61A /* chara_prc2.pvr in Resources */,
+				8E73E7BB105BAF060022A61A /* chara.png in Resources */,
+				8E73E7CE105BAF650022A61A /* chara_opt.png in Resources */,
+				8E73E7CF105BAF650022A61A /* white_ball.png in Resources */,
+				8E73E7D0105BAF650022A61A /* white_ball_opt.png in Resources */,
+				8E73E80E105BB07A0022A61A /* white_box.png in Resources */,
+				8E73E80F105BB07A0022A61A /* white_box_opt.png in Resources */,
+				8E73E816105BB0EE0022A61A /* color_box.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* OpenGL_Texture_LoaderAppDelegate.m in Sources */,
+				28FD14FE0DC6FC130079059D /* EAGLView.m in Sources */,
+				2514C27210084DB100A42282 /* ESRenderer.m in Sources */,
+				8E73E766105BAE1D0022A61A /* SZGLTexture.m in Sources */,
+				8E73E767105BAE1D0022A61A /* SZGLTextureLoader.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = OpenGL_Texture_Loader_Prefix.pch;
+				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				INFOPLIST_FILE = "OpenGL_Texture_Loader-Info.plist";
+				PRODUCT_NAME = "OpenGL Texture Loader";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = OpenGL_Texture_Loader_Prefix.pch;
+				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				INFOPLIST_FILE = "OpenGL_Texture_Loader-Info.plist";
+				PRODUCT_NAME = "OpenGL Texture Loader";
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Satoshi Numata";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D470AA3F-514B-4713-ABC9-08107EA38E0A";
+				SDKROOT = iphoneos3.0;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = iphoneos3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "OpenGL Texture Loader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "OpenGL Texture Loader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

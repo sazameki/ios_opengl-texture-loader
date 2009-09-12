@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'PNG Texture Loader' target in the 'PNG Texture Loader' project
+// Prefix header for all source files of the 'OpenGL Texture Loader' target in the 'OpenGL Texture Loader' project
 //
 
 #import <Availability.h>

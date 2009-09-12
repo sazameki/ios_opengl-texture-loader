@@ -1,6 +1,6 @@
 //
 //  EAGLView.h
-//  PNG Texture Loader
+//  OpenGL Texture Loader
 //
 //  Created by numata on 09/09/12.
 //  Copyright Satoshi Numata 2009. All rights reserved.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-#import "ES1Renderer.h"
+#import "ESRenderer.h"
 
 // This class wraps the CAEAGLLayer from CoreAnimation into a convenient UIView subclass.
 // The view content is basically an EAGL surface you render your OpenGL scene into.
@@ -17,7 +17,7 @@
 @interface EAGLView : UIView
 {    
 @private
-	ES1Renderer     *mRenderer;
+	ESRenderer  *mRenderer;
 	
 	BOOL animating;
 	BOOL displayLinkSupported;

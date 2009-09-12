@@ -1,6 +1,6 @@
 //
 //  main.m
-//  PNG Texture Loader
+//  OpenGL Texture Loader
 //
 //  Created by numata on 09/09/12.
 //  Copyright Satoshi Numata 2009. All rights reserved.

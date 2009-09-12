@@ -1,6 +1,6 @@
 //
-//  PNG_Texture_LoaderAppDelegate.h
-//  PNG Texture Loader
+//  OpenGL_Texture_LoaderAppDelegate.h
+//  OpenGL Texture Loader
 //
 //  Created by numata on 09/09/12.
 //  Copyright Satoshi Numata 2009. All rights reserved.
@@ -10,7 +10,7 @@
 
 @class EAGLView;
 
-@interface PNG_Texture_LoaderAppDelegate : NSObject <UIApplicationDelegate> {
+@interface OpenGL_Texture_LoaderAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
     EAGLView *glView;
 }

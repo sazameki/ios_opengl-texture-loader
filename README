@@ -1,6 +1,6 @@
-PNG Texture Loader for OpenGL (iPhone)
+Sazameki OpenGL Texture Loader for iPhone
 
-This texture loader allows you to make textures from optimized / non-optimized PNG image files.
+This texture loader allows you to make textures from any kind of images including optimized / non-optimized PNG image files and PVRTC files. RGB values affected by alpha values will be corrected.
 
 
 << How to use? >>
@@ -11,29 +11,7 @@ This texture loader allows you to make textures from optimized / non-optimized P
 SZGLTexture class is just prepared to show an example to use the SZGLLoadTexture() function, but I suppose it has enough implementation to make games. SZGLTexture class allows you to rotate, scale and change alpha value to render.
 
 
-<< About PNG optiomizataion for iPhone >>
-
-When we build an iPhone application for real devices, iPhone SDK automatically optimize all PNG images by pngcrush tool. Then those PNG files have different byte-ordering (RGBA to BGRA), and alpha values are multiplied to RGB values for each pixels.
-
-This PNG loader pre-divides RGB values by alpha values to cancel the premultiplication. It is not perfect, because we cannot get 0xff red value from 0x00 red value, nor get any original value from 0x00 alpha value. But I bet that the canceling is enough for human eyes in most cases.
-
-It is also a good idea to use "IPHONE_OPTIMIZE_OPTIONS=-skip-PNGs" option in your Xcode project settings. It will completely disable the optimization problem.
-
-Note that the image file sizes will be changed so drastically by the iPhone optimization. In most of the cases in my test, image file sizes were increased from original files. I also bet that the optimization won't affect your game speed so much.
-
-But iPhone SDK performs the optimization actually. It should exist for some reasons. I think the main reason we can guess at now is the byte-ordering (BGRA instead of RGBA). So I recommend to leave the iPhone optimization for PNG files enabled, if you are satisfied by the rendered result.
-
-
-
 << License >>
 
-PNG Texture Loader for OpenGL is provided under the terms of the MIT license.
-
-Copyright © 2009 Satoshi Numata, Ph.D.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+Sazameki OpenGL Texture Loader for iPhone is provided in the public domain, so you can use it in any way.
 

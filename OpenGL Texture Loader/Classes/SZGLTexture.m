@@ -19,6 +19,15 @@
         NSString *imagePath = [[NSBundle mainBundle] pathForResource:imageName ofType:nil];
         if (imagePath) {
             mTextureName = SZGLLoadTexture(imagePath, &mImageSize, &mTextureSize);
+            if (mTextureName == GL_INVALID_VALUE) {
+                NSLog(@"Failed to load %@", imagePath);
+                [self release];
+                return nil;
+            }
+        } else {
+            NSLog(@"Image file does not exist: %@", imageName);
+            [self release];
+            return nil;
         }
     }
     return self;

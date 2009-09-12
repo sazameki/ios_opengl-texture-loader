@@ -1,15 +1,15 @@
 //
-//  PNG_Texture_LoaderAppDelegate.m
-//  PNG Texture Loader
+//  OpenGL_Texture_LoaderAppDelegate.m
+//  OpenGL Texture Loader
 //
 //  Created by numata on 09/09/12.
 //  Copyright Satoshi Numata 2009. All rights reserved.
 //
 
-#import "PNG_Texture_LoaderAppDelegate.h"
+#import "OpenGL_Texture_LoaderAppDelegate.h"
 #import "EAGLView.h"
 
-@implementation PNG_Texture_LoaderAppDelegate
+@implementation OpenGL_Texture_LoaderAppDelegate
 
 @synthesize window;
 @synthesize glView;

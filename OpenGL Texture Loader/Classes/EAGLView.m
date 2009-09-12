@@ -1,6 +1,6 @@
 //
 //  EAGLView.m
-//  PNG Texture Loader
+//  OpenGL Texture Loader
 //
 //  Created by numata on 09/09/12.
 //  Copyright Satoshi Numata 2009. All rights reserved.
@@ -8,8 +8,7 @@
 
 #import "EAGLView.h"
 
-#import "ES1Renderer.h"
-
+#import "ESRenderer.h"
 
 @implementation EAGLView
 
@@ -24,8 +23,9 @@
 
 //The GL view is stored in the nib file. When it's unarchived it's sent -initWithCoder:
 - (id) initWithCoder:(NSCoder*)coder
-{    
-    if ((self = [super initWithCoder:coder])) {
+{
+    self = [super initWithCoder:coder];
+    if (self) {
         // Get the layer
         CAEAGLLayer *eaglLayer = (CAEAGLLayer *)self.layer;
         
@@ -33,7 +33,7 @@
         eaglLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:
                                         [NSNumber numberWithBool:FALSE], kEAGLDrawablePropertyRetainedBacking, kEAGLColorFormatRGBA8, kEAGLDrawablePropertyColorFormat, nil];
 		
-		mRenderer = [[ES1Renderer alloc] init];
+		mRenderer = [[ESRenderer alloc] init];
         
 		animating = FALSE;
 		displayLinkSupported = FALSE;
@@ -45,9 +45,8 @@
 		// class is used as fallback when it isn't available.
 		NSString *reqSysVer = @"3.1";
 		NSString *currSysVer = [[UIDevice currentDevice] systemVersion];
-		if ([currSysVer compare:reqSysVer options:NSNumericSearch] != NSOrderedAscending) {
+		if ([currSysVer compare:reqSysVer options:NSNumericSearch] != NSOrderedAscending)
 			displayLinkSupported = TRUE;
-        }
     }
 	
     return self;
@@ -60,16 +59,10 @@
     [super dealloc];
 }
 
-
-#pragma mark -
-
 - (void)drawView:(id)sender
 {
     [mRenderer render];
 }
-
-
-#pragma mark -
 
 - (void)layoutSubviews
 {
@@ -90,10 +83,12 @@
 	// frame interval setting of one will fire 60 times a second when the display refreshes
 	// at 60 times a second. A frame interval setting of less than one results in undefined
 	// behavior.
-	if (frameInterval >= 1) {
+	if (frameInterval >= 1)
+	{
 		animationFrameInterval = frameInterval;
 		
-		if (animating) {
+		if (animating)
+		{
 			[self stopAnimation];
 			[self startAnimation];
 		}
@@ -132,6 +127,11 @@
 		
 		animating = FALSE;
 	}
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [mRenderer changeTestMode];
 }
 
 @end
